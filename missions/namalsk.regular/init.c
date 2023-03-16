@@ -111,6 +111,8 @@ class CustomMission: MissionServer
 	
 	override void StartingEquipSetup( PlayerBase player, bool clothesChosen )
 	{
+		super.StartingEquipSetup( player, clothesChosen );
+		
 		//Base namalsk code start
 		//If you do not wish for them to spawn with a rag, two flares, a heatpack, or the watch delete from here to line: 164.
 		EntityAI itemClothing;

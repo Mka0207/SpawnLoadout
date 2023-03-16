@@ -111,6 +111,8 @@ class CustomMission: MissionServer
 
 	override void StartingEquipSetup( PlayerBase player, bool clothesChosen )
 	{
+		super.StartingEquipSetup( player, clothesChosen );
+		
 		//Start Namalsk Base Code
 		EntityAI itemClothing;
 		EntityAI itemEnt;

@@ -74,6 +74,8 @@ class CustomMission : MissionServer
 	//!!! REPLACES EXISTING METHOD
 	override void StartingEquipSetup(PlayerBase player, bool clothesChosen)
 	{
+		super.StartingEquipSetup( player, clothesChosen );
+		
 		FileHandle donatorFile;
 		string line;
 
