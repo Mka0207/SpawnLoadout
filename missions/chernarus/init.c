@@ -74,8 +74,6 @@ class CustomMission : MissionServer
 	//!!! REPLACES EXISTING METHOD
 	override void StartingEquipSetup(PlayerBase player, bool clothesChosen)
 	{
-		super.StartingEquipSetup( player, clothesChosen );
-		
 		FileHandle donatorFile;
 		string line;
 
@@ -336,6 +334,8 @@ class CustomMission : MissionServer
 	override void EquipCharacter(MenuDefaultCharacterData char_data)
 	{		
 		StartingEquipSetup(m_player, true);
+		if ( m_BedFrameWork.m_BedConfig.DisableAutoSpawnCall == 1 ) return;
+		m_BedFrameWork.OnEquipCharacter( m_player );
 	}
 
 	void Log(string msg)
