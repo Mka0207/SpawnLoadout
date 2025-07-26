@@ -334,8 +334,14 @@ class CustomMission : MissionServer
 	override void EquipCharacter(MenuDefaultCharacterData char_data)
 	{		
 		StartingEquipSetup(m_player, true);
-		if ( m_BedFrameWork.m_BedConfig.DisableAutoSpawnCall == 1 ) return;
-		m_BedFrameWork.OnEquipCharacter( m_player );
+		if ( m_BedFrameWork )
+		{
+			if ( m_BedFrameWork.m_BedConfig.DisableAutoSpawnCall == 1 ) return;
+			if ( m_BedFrameWork.HasBedData(m_player.GetIdentity().GetId()) )
+			{
+				m_BedFrameWork.TeleportPlayer( m_player );
+			}
+		}
 	}
 
 	void Log(string msg)
